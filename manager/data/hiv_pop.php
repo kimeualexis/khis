@@ -6,7 +6,7 @@
 
 
 
-		$sql="SELECT * FROM tblhiv";
+		$sql="SELECT * FROM tblhiv WHERE Year=2018 ";
 		$query=mysqli_query($conn, $sql);
 
 while ($ror = mysqli_fetch_assoc($query)){

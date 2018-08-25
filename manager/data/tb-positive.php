@@ -41,7 +41,13 @@
 
 
 		<div class="col-sm-10" ng-init="tb_pos()">
-			<h3 class="page-header text-center">Tuberculosis</h3>
+<h3 class="page-header text-center text-primary"><strong>Tuberculosis</strong></h3>			<a href="#" class="btn btn-default">2015</a>
+			<a href="#" class="btn btn-default">2016</a>
+			<a href="../2017/tb-tested.php" class="btn btn-default">2017</a>
+			<a href="tb-tested.php" class="btn btn-default">2018</a>
+			<br>
+			<br>
+			<br>
 			<canvas id="dvCanvas" height="200" width="300"></canvas>
 	    </div>
 
@@ -58,7 +64,7 @@
 			</div>
 </div>
 
-<?php include('../includes/sidebarmenu.php');?>
+<?php include('includes/sidebarmenu.php');?>
 			<div class="clearfix"></div>
 		</div>
 		<script>

@@ -41,7 +41,7 @@ else{
 <!--header start here-->
 
 		<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li class="breadcrumb-item"><a href="../manager/dashboard.php">Home</a> <i class="fa fa-angle-right"></i></li>
             </ol>
 <!--four-grids here-->
 		<div class="four-grids">
@@ -226,7 +226,7 @@ $cnt3=$query3->rowCount();
 </div>
 
 			<!--/sidebar-menu-->
-				<?php include('includes/sidebarmenu.php');?>
+				<?php include('sidebarmenu.php');?>
 							  <div class="clearfix"></div>
 							</div>
 							<script>

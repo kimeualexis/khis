@@ -6,7 +6,7 @@
 
 
 
-		$sql="SELECT * FROM tblcholera";
+		$sql="SELECT * FROM tblcholera WHERE Year=2018 ";
 		$query=mysqli_query($conn, $sql);
 
 while ($ror = mysqli_fetch_assoc($query)){
