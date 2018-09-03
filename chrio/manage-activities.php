@@ -7,19 +7,18 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_POST['add']))
+if(isset($_POST['submit']))
 {
+  $indicator=$_POST['indicator'];
+  $title=$_POST['title'];
+  $description=$_POST['description'];
+  $sdate=$_POST['sdate'];
+  $fdate=$_POST['fdate'];
+  $aimage=$_FILES["aimage"]["name"];
+	move_uploaded_file($_FILES["aimage"]["tmp_name"],"uploads/".$_FILES["aimage"]["name"]);
 
-echo $indicator=$_POST['indicator'];
-echo $title=$_POST['title'];
-echo $description=$_POST['description'];
-echo $sdate=$_POST['sdate'];
-echo $fdate=$_POST['fdate'];
-echo $aimage=$_FILES["activityimage"]["name"];
-move_uploaded_file($_FILES["activityimage"]["tmp_name"],"activityimages/".$_FILES["activityimage"]["name"]);
 
-
-$sql="INSERT INTO tblactivities(Indicator,Title,Description,SDate, FDate, ActivityImage) VALUES(:indicator,:title,:description,:sdate,:fdate,:aimage)";
+$sql="INSERT INTO tblactivities(Indicator,Title,Description,SDate,FDate,ActivityImage) VALUES(:indicator,:title,:description,:sdate,:fdate,:aimage)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':indicator',$indicator,PDO::PARAM_STR);
 $query->bindParam(':title',$title,PDO::PARAM_STR);
@@ -105,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   	         <div class="tab-content">
 
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" name="package" method="post" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Indicator</label>
 									<div class="col-sm-8">
@@ -135,20 +134,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="form-group">
       <label for="focusedinput" class="col-sm-2 control-label">End Date</label>
       	<div class="col-sm-8">
-      	<input type="Date" class="form-control1" name="fdate" required>
+      	<input type="date" class="form-control1" name="fdate" required>
       	</div>
       	</div>
 
 				<div class="form-group">
 													<label for="focusedinput" class="col-sm-2 control-label">Activity Image</label>
 													<div class="col-sm-8">
-														<input type="file" name="activityimage" required>
+														<input type="file" name="aimage" required>
 													</div>
 												</div>
 
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
-				<button type="submit" name="add" class="btn-primary btn">Add</button>
+				<button type="submit" name="submit" class="btn-primary btn">Add</button>
 
 				<button type="reset" class="btn-inverse btn">Reset</button>
 			</div>
